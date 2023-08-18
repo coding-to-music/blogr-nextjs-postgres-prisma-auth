@@ -6,7 +6,7 @@ https://github.com/coding-to-music/blogr-nextjs-postgres-prisma-auth
 
 https://blogr-nextjs-postgres-prisma-auth.vercel.app
 
-From / By
+From / By https://vercel.com/guides/nextjs-prisma-postgres
 
 <!-- <div style="text-align:center;">
   <img src="/images/chakra.jpg" alt="Image" />
