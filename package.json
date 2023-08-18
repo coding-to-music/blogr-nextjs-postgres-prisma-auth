@@ -1,8 +1,9 @@
 {
-  "name": "hello-next",
+  "name": "blogr-nextjs-postgres-prisma-auth",
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "deploy": "git add . && git commit -m 'Build' && git push",
     "dev": "next",
     "build": "next build",
     "start": "next start"
