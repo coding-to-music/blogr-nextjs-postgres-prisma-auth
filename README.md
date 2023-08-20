@@ -52,3 +52,21 @@ git push -u origin main
 # Fullstack Authentication Example with Next.js and NextAuth.js
 
 This is the starter project for the fullstack tutorial with Next.js and Prisma. You can find the final version of this project in the [`final`](https://github.com/prisma/blogr-nextjs-prisma/tree/final) branch of this repo.
+
+## Upgrade npm packages
+
+```java
+ncu
+```
+
+```java
+ @types/node     17.0.14  →   20.5.1
+ @types/react    17.0.38  →  18.2.20
+ next            12.0.10  →  13.4.19
+ react            17.0.2  →   18.2.0
+ react-dom        17.0.2  →   18.2.0
+ react-markdown    8.0.0  →    8.0.7
+ typescript        4.5.5  →    5.1.6
+
+Run ncu -u to upgrade package.json
+```
