@@ -111,11 +111,10 @@ Start the Next.js application at https://localhost:3000.
 Here's what it looks like at the moment:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Image" />
+  <img src="/images/1.png" alt="Current state of the application." />
   <p><em>Current state of the application.</em></p>
 </div>
 
-Current state of the application.
 The app currently displays hardcoded data that's returned from getStaticProps in the index.tsx file. Over the course of the next few sections, you'll change this so that the data is returned from an actual database.
 
 ## Step 2: Set up your Vercel Postgres database
