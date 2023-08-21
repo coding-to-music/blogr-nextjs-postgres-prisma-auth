@@ -1325,7 +1325,7 @@ This time, the Authorization Callback URL needs to match the domain of your futu
 The Authorization Callback URL must therefore be set to https://FIRSTNAME-LASTNAME-blogr-nextjs-prisma.vercel.app/api/auth. Once you created the application, adjust your .env file and set the Client ID as the GITHUB_ID env var and a Client secret as the GITHUB_SECRET env var. The NEXTAUTH_URL env var needs to be set to the same value as the Authorization Callback URL on GitHub: https://FIRSTNAME-LASTNAME-blogr-nextjs-prisma.vercel.app/api/auth.
 
 <div style="text-align:center;">
-  <img src="/images/12-1-publish.png" alt="Update the Authorization callback URL." />
+  <img src="/images/12-1-callback-url.png" alt="Update the Authorization callback URL." />
   <p><em>Update the Authorization callback URL.</em></p>
 </div>
 
