@@ -376,12 +376,10 @@ Start your application at http://localhost:3000.
 Otherwise, save the files and open the app at http://localhost:3000 in your browser. The Post record will be displayed as follows:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/05-new-post.png" alt="Your newly published post." />
+  <p><em>Your newly published post.</em></p>
 </div>
 
-Your newly published post.
-Your newly published post.
 You can also click on the post to navigate to its detail view.
 
 ## Step 6. Set up GitHub authentication with NextAuth
@@ -479,23 +477,19 @@ OAuth Apps
 .
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/06-1-new-oauth.png" alt="Create a new OAuth application inside GitHub." />
+  <p><em>Create a new OAuth application inside GitHub.</em></p>
 </div>
 
-Create a new OAuth application inside GitHub.
-Create a new OAuth application inside GitHub.
 Clicking on the Register a new application (or New OAuth App) button will redirect you to a registration form to fill out some information for your app. The Authorization callback URL should be the Next.js /api/auth route: http://localhost:3000/api/auth.
 
 An important thing to note here is that the Authorization callback URL field only supports a single URL, unlike e.g. Auth0, which allows you to add additional callback URLs separated with a comma. This means if you want to deploy your app later with a production URL, you will need to set up a new GitHub OAuth app.
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/06-2-callback.png" alt="Ensure your Authorization callback URL is correct." />
+  <p><em>Ensure your Authorization callback URL is correct.</em></p>
 </div>
 
-Ensure your Authorization callback URL is correct.
-Ensure your Authorization callback URL is correct.
 Click on the Register application button, and then you will be able to find your newly generated Client ID and Client Secret. Copy and paste this info into the .env file in the root directory as the GITHUB_ID and GITHUB_SECRET env vars. Also set the NEXTAUTH_URL to the same value of the Authorization callback URL thar you configured on GitHub: http://localhost:3000/api/auth
 
 ```java
@@ -795,12 +789,10 @@ Set up NextAuth, including the Prisma Adapter.
 Once the code is added, you can navigate to http://localhost:3000/api/auth/signin again. This time, the Sign in with GitHub button is shown.
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/07-1-next-auth.png" alt="Sign in with GitHub using NextAuth." />
+  <p><em>Sign in with GitHub using NextAuth.</em></p>
 </div>
 
-Sign in with GitHub using NextAuth.
-Sign in with GitHub using NextAuth.
 If you click it, you're forwarded to GitHub, where you can authenticate with your GitHub credentials. Once the authentication is done, you'll be redirected back into the app.
 
 - Note: If you're seeing an error and could not be authenticated, stop the app and re-run it with npm run dev.
@@ -808,12 +800,9 @@ If you click it, you're forwarded to GitHub, where you can authenticate with you
 The header layout has now changed to display the buttons for authenticated users.
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/07-2-logout.png" alt="The Header displaying a log out button." />
+  <p><em>The Header displaying a log out button.</em></p>
 </div>
-
-The Header displaying a log out button.
-The Header displaying a log out button.
 
 ## Step 8. Add new post functionality
 
@@ -941,12 +930,10 @@ In this code, you're using the title and content properties that are extracted f
 Afterwards, you're redirecting the user to the /drafts page so that they can immediately see their newly created draft. If you run the app, the /create route renders the following UI:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/08-1-new-draft.png" alt="Create a new draft." />
+  <p><em>Create a new draft.</em></p>
 </div>
 
-Create a new draft.
-Create a new draft.
 Note however that the implementation doesn't quite work yet because neither api/post nor the /drafts route exist so far. You'll implement these next.
 
 First, let's make sure your backend can handle the POST request that's submitted by the user. Thanks to the Next.js API routes feature, you don't have to "leave your Next.js app" to implement such functionality but instead you can add it to your pages/api directory.
@@ -993,12 +980,10 @@ This code implements the handler function for any requests coming in at the /api
 You can now test this functionality by opening the app, making sure you're authenticated and create a new post with title and content:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/08-2-new-post.png" alt="Testing creating a new post via the API Route." />
+  <p><em>Testing creating a new post via the API Route.</em></p>
 </div>
 
-Testing creating a new post via the API Route.
-Testing creating a new post via the API Route.
 Once you click Create, the Post record will be added to the database. Note that the /drafts route that you're being redirected to right after the creation still renders a 404, that will be fixed soon. However, if you run Prisma Studio again with npx prisma studio, you'll see that the new Post record has been added to the database.
 
 ## Step 9. Add drafts functionality
@@ -1105,12 +1090,9 @@ In this React component, you're rendering a list of "drafts" of the authenticate
 If you now navigate to the My drafts section of the app, you'll see the unpublished post that you created before:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/09-drafts.png" alt="Completed drafts page." />
+  <p><em>Completed drafts page.</em></p>
 </div>
-
-Completed drafts page.
-Completed drafts page.
 
 ## Step 10. Add Publish functionality
 
@@ -1239,12 +1221,10 @@ Update the Post component to handle publishing via the API Route.
 This code adds the publishPost function to the React component which is responsible for sending the HTTP PUT request to the API route you just implemented. The render function of the component is also adjusted to check whether the user is authenticated, and if that's the case, it'll display the Publish button in the post detail view as well:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/10-publish.png" alt="The publish button shown for a post." />
+  <p><em>The publish button shown for a post.</em></p>
 </div>
 
-The publish button shown for a post.
-The publish button shown for a post.
 If you click the button, you will be redirected to the public feed and the post will be displayed there!
 
 - Note: Once the app is deployed to production, the feed will be updated at most every 10 seconds when it receives a request. That's because you're using static site generation (SSG) via getStaticProps to retrieve the data for this view with Incremental Static Regeneration. If you want data to be updated "immediately", consider using On-Demand Incremental Static Regeneration.
@@ -1324,12 +1304,9 @@ Logic to determine whether to show the publish and delete buttons.
 You can now try out the new functionality by creating a new draft, navigating to its detail view and then clicking the newly appearing Delete button:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/11-delete.png" alt="The Delete button showing on the post page." />
+  <p><em>The Delete button showing on the post page.</em></p>
 </div>
-
-The Delete button showing on the post page.
-The Delete button showing on the post page.
 
 ## Step 12. Deploy to Vercel
 
