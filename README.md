@@ -1325,12 +1325,10 @@ This time, the Authorization Callback URL needs to match the domain of your futu
 The Authorization Callback URL must therefore be set to https://FIRSTNAME-LASTNAME-blogr-nextjs-prisma.vercel.app/api/auth. Once you created the application, adjust your .env file and set the Client ID as the GITHUB_ID env var and a Client secret as the GITHUB_SECRET env var. The NEXTAUTH_URL env var needs to be set to the same value as the Authorization Callback URL on GitHub: https://FIRSTNAME-LASTNAME-blogr-nextjs-prisma.vercel.app/api/auth.
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/12-1-publish.png" alt="Update the Authorization callback URL." />
+  <p><em>Update the Authorization callback URL.</em></p>
 </div>
 
-Update the Authorization callback URL.
-Update the Authorization callback URL.
 Next, create a new GitHub repository with the same name, e.g. jane-doe-blogr-nextjs-prisma. Now, copy the three terminal commands from the bottom section that says ...or push an existing repository from the command line, it should look similar to this:
 
 ```java
@@ -1349,21 +1347,17 @@ Deploy
 Now, provide the URL of your GitHub repo in the text field:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/12-2-import-repo.png" alt="Import a git repository to Vercel." />
+  <p><emImport a git repository to Vercel.</em></p>
 </div>
 
-Import a git repository to Vercel.
-Import a git repository to Vercel.
 Click Continue. The next screen requires you to set the environment variables for your production deployment:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/12-3-environment.png" alt="Add environment variables to Vercel." />
+  <p><em>Add environment variables to Vercel.</em></p>
 </div>
 
-Add environment variables to Vercel.
-Add environment variables to Vercel.
 Here's what you need to provide:
 
 - `GITHUB_ID`: Set this to the Client ID of the GitHub OAuth app you just created
@@ -1373,10 +1367,8 @@ Here's what you need to provide:
   You'll also need to link your Vercel postgres database to this Vercel project so that all your database environment variables are automatically added. Once all environment variables are set, hit Deploy. Your app is now being deployed to Vercel. Once it's ready, Vercel will show you the following success screen:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/12-4-completed-app.png" alt="Your application deployed to Vercel." />
+  <p><em>Your application deployed to Vercel.</em></p>
 </div>
 
-Your application deployed to Vercel.
-Your application deployed to Vercel.
 You can click the Visit button to view the deployed version of your fullstack app 🎉
