@@ -1348,7 +1348,7 @@ Now, provide the URL of your GitHub repo in the text field:
 
 <div style="text-align:center;">
   <img src="/images/12-2-import-repo.png" alt="Import a git repository to Vercel." />
-  <p><emImport a git repository to Vercel.</em></p>
+  <p><em>Import a git repository to Vercel.</em></p>
 </div>
 
 Click Continue. The next screen requires you to set the environment variables for your production deployment:
