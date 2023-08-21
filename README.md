@@ -111,7 +111,7 @@ Start the Next.js application at https://localhost:3000.
 Here's what it looks like at the moment:
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
+  <img src="/images/01-current-state.png" alt="Current state of the application." />
   <p><em>Current state of the application.</em></p>
 </div>
 
@@ -226,20 +226,14 @@ Open Prisma Studio, a GUI for modifying your database.
 Use Prisma Studio's interface to create a new User and Post record and connect them via their relation fields.
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/03-1-new-user.png" alt="Create a new `User` record" />
+  <p><em>Create a new `User` record</em></p>
 </div>
-
-- Create a new `User` record
-- Create a new `User` record
 
 <div style="text-align:center;">
-  <img src="/images/1.png" alt="Current state of the application." />
-  <p><em>Current state of the application.</em></p>
+  <img src="/images/03-2-new-post.png" alt="Create a new `Post` record and connect it to the `User` record" />
+  <p><em>Create a new `Post` record and connect it to the `User` record</em></p>
 </div>
-
-- Create a new `Post` record and connect it to the `User` record
-- Create a new `Post` record and connect it to the `User` record
 
 ## Step 4. Install and generate Prisma Client
 
