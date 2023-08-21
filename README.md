@@ -145,6 +145,10 @@ We now have a fully functioning Vercel Postgres database and have all the enviro
 Next, you will set up Prisma and connect it to your PostgreSQL database. Start by installing the Prisma CLI via npm:
 
 ```java
+yarn add prisma --save-dev
+
+# or
+
 npm install prisma --save-dev
 ```
 
@@ -240,6 +244,10 @@ Use Prisma Studio's interface to create a new User and Post record and connect t
 Before you can access your database from Next.js using Prisma, you first need to install Prisma Client in your app. You can install it via npm as follows:
 
 ```java
+yarn add @prisma/client
+
+# or
+
 npm install @prisma/client
 ```
 
@@ -391,7 +399,7 @@ You can also click on the post to navigate to its detail view.
 - Starting with Next.js 13, `<Link>` renders as `<a>`, so attempting to use `<a>` as a child is invalid.
 
 - Possible Ways to Fix It
-- Run the new-link codemod to automatically upgrade previous versions of Next.js to the new <Link> usage:
+- Run the new-link `codemod` to automatically upgrade previous versions of Next.js to the new `<Link>` usage:
 
 ```java
 npx @next/codemod new-link .
@@ -408,6 +416,10 @@ In this step, you will add GitHub authentication to the app. Once that functiona
 As a first step, go ahead and install the NextAuth.js library in your app:
 
 ```java
+yarn add next-auth@4 @next-auth/prisma-adapter
+
+# or
+
 npm install next-auth@4 @next-auth/prisma-adapter
 ```
 
