@@ -264,7 +264,7 @@ Create a new folder for the Prisma library.
 Now, add the following code to this file:
 
 ```java
-lib/prisma.ts
+// lib/prisma.ts
 
 import { PrismaClient } from '@prisma/client';
 
