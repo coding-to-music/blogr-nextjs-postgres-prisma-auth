@@ -225,8 +225,19 @@ Open Prisma Studio, a GUI for modifying your database.
 
 Use Prisma Studio's interface to create a new User and Post record and connect them via their relation fields.
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 - Create a new `User` record
 - Create a new `User` record
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 - Create a new `Post` record and connect it to the `User` record
 - Create a new `Post` record and connect it to the `User` record
 
@@ -370,6 +381,11 @@ Start your application at http://localhost:3000.
 
 Otherwise, save the files and open the app at http://localhost:3000 in your browser. The Post record will be displayed as follows:
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 Your newly published post.
 Your newly published post.
 You can also click on the post to navigate to its detail view.
@@ -468,11 +484,21 @@ Developer Settings
 OAuth Apps
 .
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 Create a new OAuth application inside GitHub.
 Create a new OAuth application inside GitHub.
 Clicking on the Register a new application (or New OAuth App) button will redirect you to a registration form to fill out some information for your app. The Authorization callback URL should be the Next.js /api/auth route: http://localhost:3000/api/auth.
 
 An important thing to note here is that the Authorization callback URL field only supports a single URL, unlike e.g. Auth0, which allows you to add additional callback URLs separated with a comma. This means if you want to deploy your app later with a production URL, you will need to set up a new GitHub OAuth app.
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 Ensure your Authorization callback URL is correct.
 Ensure your Authorization callback URL is correct.
@@ -774,6 +800,11 @@ const options = {
 Set up NextAuth, including the Prisma Adapter.
 Once the code is added, you can navigate to http://localhost:3000/api/auth/signin again. This time, the Sign in with GitHub button is shown.
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 Sign in with GitHub using NextAuth.
 Sign in with GitHub using NextAuth.
 If you click it, you're forwarded to GitHub, where you can authenticate with your GitHub credentials. Once the authentication is done, you'll be redirected back into the app.
@@ -781,6 +812,11 @@ If you click it, you're forwarded to GitHub, where you can authenticate with you
 - Note: If you're seeing an error and could not be authenticated, stop the app and re-run it with npm run dev.
 
 The header layout has now changed to display the buttons for authenticated users.
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 The Header displaying a log out button.
 The Header displaying a log out button.
@@ -910,6 +946,11 @@ In this code, you're using the title and content properties that are extracted f
 
 Afterwards, you're redirecting the user to the /drafts page so that they can immediately see their newly created draft. If you run the app, the /create route renders the following UI:
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 Create a new draft.
 Create a new draft.
 Note however that the implementation doesn't quite work yet because neither api/post nor the /drafts route exist so far. You'll implement these next.
@@ -956,6 +997,11 @@ Update the API route to modify the database using the Prisma Client.
 This code implements the handler function for any requests coming in at the /api/post/ route. The implementation does the following: First it extracts the title and cotent from the body of the incoming HTTP POST request. After that, it checks whether the request is coming from an authenticated user with the getSession helper function from NextAuth.js. And finally, it uses Prisma Client to create a new Post record in the database.
 
 You can now test this functionality by opening the app, making sure you're authenticated and create a new post with title and content:
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 Testing creating a new post via the API Route.
 Testing creating a new post via the API Route.
@@ -1063,6 +1109,11 @@ Update the Draft page to show a list of drafts.
 In this React component, you're rendering a list of "drafts" of the authenticated user. The drafts are retrieved from the database during server-side rendering, because the database query with Prisma Client is executed in getServerSideProps. The data is then made available to the React component via its props.
 
 If you now navigate to the My drafts section of the app, you'll see the unpublished post that you created before:
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 Completed drafts page.
 Completed drafts page.
@@ -1193,6 +1244,11 @@ Update the Post component to handle publishing via the API Route.
 
 This code adds the publishPost function to the React component which is responsible for sending the HTTP PUT request to the API route you just implemented. The render function of the component is also adjusted to check whether the user is authenticated, and if that's the case, it'll display the Publish button in the post detail view as well:
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 The publish button shown for a post.
 The publish button shown for a post.
 If you click the button, you will be redirected to the public feed and the post will be displayed there!
@@ -1273,6 +1329,11 @@ Logic to determine whether to show the publish and delete buttons.
 
 You can now try out the new functionality by creating a new draft, navigating to its detail view and then clicking the newly appearing Delete button:
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 The Delete button showing on the post page.
 The Delete button showing on the post page.
 
@@ -1291,6 +1352,11 @@ This time, the Authorization Callback URL needs to match the domain of your futu
 - Note: Prepending your first and last name is required to ensure the uniqueness of your deployment URL.
 
 The Authorization Callback URL must therefore be set to https://FIRSTNAME-LASTNAME-blogr-nextjs-prisma.vercel.app/api/auth. Once you created the application, adjust your .env file and set the Client ID as the GITHUB_ID env var and a Client secret as the GITHUB_SECRET env var. The NEXTAUTH_URL env var needs to be set to the same value as the Authorization Callback URL on GitHub: https://FIRSTNAME-LASTNAME-blogr-nextjs-prisma.vercel.app/api/auth.
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 Update the Authorization callback URL.
 Update the Authorization callback URL.
@@ -1311,9 +1377,19 @@ With the GitHub repo in place, you can now import it to Vercel in order to deplo
 Deploy
 Now, provide the URL of your GitHub repo in the text field:
 
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
+
 Import a git repository to Vercel.
 Import a git repository to Vercel.
 Click Continue. The next screen requires you to set the environment variables for your production deployment:
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 Add environment variables to Vercel.
 Add environment variables to Vercel.
@@ -1324,6 +1400,11 @@ Here's what you need to provide:
 - `NEXTAUTH_URL`: Set this to the Authorization Callback URL of the GitHub OAuth app you just created
 - `SECRET`: Set this to your own strong secret. This was not needed in development as NextAuth.js will generate one if not provided. However, you will need to provide your own value for production otherwise you will receive an error.
   You'll also need to link your Vercel postgres database to this Vercel project so that all your database environment variables are automatically added. Once all environment variables are set, hit Deploy. Your app is now being deployed to Vercel. Once it's ready, Vercel will show you the following success screen:
+
+<div style="text-align:center;">
+  <img src="/images/1.png" alt="Current state of the application." />
+  <p><em>Current state of the application.</em></p>
+</div>
 
 Your application deployed to Vercel.
 Your application deployed to Vercel.
