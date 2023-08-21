@@ -382,6 +382,25 @@ Otherwise, save the files and open the app at http://localhost:3000 in your brow
 
 You can also click on the post to navigate to its detail view.
 
+### Errors found because upgraded to Next.js 13.4
+
+#### Invalid `<Link>` with `<a>` child
+
+- Why This Error Occurred
+
+- Starting with Next.js 13, `<Link>` renders as `<a>`, so attempting to use `<a>` as a child is invalid.
+
+- Possible Ways to Fix It
+- Run the new-link codemod to automatically upgrade previous versions of Next.js to the new <Link> usage:
+
+```java
+npx @next/codemod new-link .
+```
+
+This will change `<Link><a id="link">Home</a></Link>` to `<Link id="link">Home</Link>`.
+
+Alternatively, you can add the `legacyBehavior` prop `<Link legacyBehavior><a id="link">Home</a></Link>`.
+
 ## Step 6. Set up GitHub authentication with NextAuth
 
 In this step, you will add GitHub authentication to the app. Once that functionality is available, you'll add more features to the app, such that authenticated users can create, publish and delete posts via the UI.
