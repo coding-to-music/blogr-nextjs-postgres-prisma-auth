@@ -509,7 +509,76 @@ Now you can adjust your database schema by creating the actual tables in the dat
 npx prisma db push
 ```
 
-Update the tables in your database based on your Prisma schema.
+This will Update the tables in your database based on your Prisma schema.
+
+## Baselining a database
+
+https://www.prisma.io/docs/guides/migrate/developing-with-prisma-migrate/baselining
+
+If the migrations are incomplete and your schema is out of sync with the target database, perform a Baseline
+
+To create a baseline migration:
+
+If you have a prisma/migrations folder, delete, move, rename, or archive this folder.
+
+Run the following command to create a migrations directory inside with your preferred name. This example will use 0_init for the migration name:
+
+```java
+mkdir -p prisma/migrations/0_init
+```
+
+Then 0\_ is important because Prisma Migrate applies migrations in a lexicographic order. You can use a different value such as the current timestamp.
+
+Generate a migration and save it to a file using prisma migrate diff
+
+```java
+npx prisma migrate diff \
+--from-empty \
+--to-schema-datamodel prisma/schema.prisma \
+--script > prisma/migrations/0_init/migration.sql
+```
+
+Run the prisma migrate resolve command for each migration that should be ignored:
+
+- Note we are using the same `0_init` that we used to create the directory (above)
+
+```java
+npx prisma migrate resolve --applied 0_init
+```
+
+```java
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "neondb", schema "public" at "server-name"
+Migration 0_init marked as applied.
+```
+
+This command adds the target migration to the \_prisma_migrations table and marks it as applied. When you run prisma migrate deploy to apply new migrations, Prisma Migrate:
+
+- Skips all migrations marked as 'applied', including the baseline migration
+- Applies any new migrations that come after the baseline migration
+
+To verify, now you can adjust your database schema by creating the actual tables in the database.
+
+However, since you just synced the baseline, it should have nothing to do and exit without performing changes
+
+Run the following command:
+
+```java
+npx prisma db push
+```
+
+```java
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "neondb", schema "public" at "server-name"
+
+🚀  Your database is now in sync with your Prisma schema. Done in 1.15s
+
+✔ Generated Prisma Client (v5.2.0) to ./node_modules/@prisma/client in 193ms
+```
+
+## Create a new OAuth app on GitHub
 
 Since you're using GitHub authentication, you also need to create a new OAuth app on GitHub. First, log into your GitHub account. Then, navigate to
 Settings
