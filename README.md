@@ -593,7 +593,7 @@ Since you're using GitHub authentication, you also need to create a new [OAuth a
   <p><em>Create a new OAuth application inside GitHub.</em></p>
 </div>
 
-Clicking on the Register a new application (or New OAuth App) button will redirect you to a registration form to fill out some information for your app. The Authorization callback URL should be the Next.js /api/auth route: http://localhost:3000/api/auth.
+Clicking on the Register a `new application` (or `New OAuth App`) button will redirect you to a registration form to fill out some information for your app. The Authorization callback URL should be the Next.js `/api/auth` route: `http://localhost:3000/api/auth`.
 
 An important thing to note here is that the Authorization callback URL field only supports a single URL, unlike e.g. Auth0, which allows you to add additional callback URLs separated with a comma. This means if you want to deploy your app later with a production URL, you will need to set up a new GitHub OAuth app.
 
@@ -608,8 +608,8 @@ Click on the Register application button, and then you will be able to find your
 # .env
 
 # GitHub OAuth
-GITHUB_ID=6bafeb321963449bdf51
-GITHUB_SECRET=509298c32faa283f28679ad6de6f86b2472e1bff
+GITHUB_ID=6bafeb321963449bdf51 (example value)
+GITHUB_SECRET=509298c32faa283f28679ad6de6f86b2472e1bff (example value)
 NEXTAUTH_URL=http://localhost:3000/api/auth
 ```
 
