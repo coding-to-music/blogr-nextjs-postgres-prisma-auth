@@ -580,12 +580,12 @@ Datasource "db": PostgreSQL database "neondb", schema "public" at "server-name"
 
 ## Create a new OAuth app on GitHub
 
-Since you're using GitHub authentication, you also need to create a new OAuth app on GitHub. First, log into your GitHub account. Then, navigate to
-Settings
+Since you're using GitHub authentication, you also need to create a new [OAuth app on GitHub](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps). First, log into your [GitHub account](https://github.com/). Then, navigate to
+[Settings](https://github.com/settings/profile)
 , then open to
-Developer Settings
+[Developer Settings](https://github.com/settings/apps)
 , then switch to
-OAuth Apps
+[OAuth Apps](https://github.com/settings/developers)
 .
 
 <div style="text-align:center;">
