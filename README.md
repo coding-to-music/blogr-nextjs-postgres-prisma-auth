@@ -432,13 +432,24 @@ To change your database schema, you can manually make changes to your Prisma sch
 ```java
 // schema.prisma
 
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
 model Post {
-  id        String  @id @default(cuid())
+  id        String   @id @default(cuid())
   title     String
   content   String?
   published Boolean @default(false)
-  author    User?@relation(fields:[authorId], references:[id])
-  authorId  String?}
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  String?
+}
 
 model Account {
   id                 String  @id @default(cuid())
@@ -456,34 +467,35 @@ model Account {
   oauth_token_secret String?
   oauth_token        String?
 
-  user User @relation(fields:[userId], references:[id], onDelete: Cascade)
-
-  @@unique([provider, providerAccountId])}
+  user User @relation(fields: [userId], references: [id])
+  @@unique([provider, providerAccountId])
+}
 
 model Session {
   id           String   @id @default(cuid())
-  sessionToken String   @unique@map("session_token")
+  sessionToken String   @unique @map("session_token")
   userId       String   @map("user_id")
   expires      DateTime
-  user         User     @relation(fields:[userId], references:[id], onDelete: Cascade)}
+  user         User     @relation(fields: [userId], references: [id])
+}
 
 model User {
   id            String    @id @default(cuid())
   name          String?
-  email         String?@unique
+  email         String?   @unique
   emailVerified DateTime?
   image         String?
   posts         Post[]
   accounts      Account[]
-  sessions      Session[]}
+  sessions      Session[]
+}
 
 model VerificationToken {
-  id         Int      @id @default(autoincrement())
+  id         String   @id @default(cuid())
   identifier String
   token      String   @unique
   expires    DateTime
-
-  @@unique([identifier, token])}
+  @@unique([identifier, token])
 }
 ```
 
