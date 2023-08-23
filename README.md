@@ -1059,7 +1059,7 @@ mkdir -p pages/api/post && touch pages/api/post/index.ts
 
 Create a new API route to create a post.
 
-- Note: At this point, you could also have created a file called pages/api/post.ts` instead of taking the detour with an extra directory and an index.ts file. The reason why you're not doing it that way is because you'll need to add a dynamic route for HTTP DELETE requests at the api/post route later as well. In order to save some refactoring later, you're already structuring the files in the required way.
+- Note: At this point, you could also have created a file called `pages/api/post.ts` instead of taking the detour with an extra directory and an index.ts file. The reason why you're not doing it that way is because you'll need to add a dynamic route for HTTP DELETE requests at the api/post route later as well. In order to save some refactoring later, you're already structuring the files in the required way.
 
 Now, add the following code to pages/api/post/index.ts:
 
