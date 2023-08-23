@@ -1329,6 +1329,26 @@ const Post: React.FC<PostProps> = (props) => {
 export default Post;
 ```
 
+### Error message: Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
+
+```java
+Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
+```
+
+https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
+
+Original:
+
+```java
+        <ReactMarkdown children={props.content} />
+```
+
+Fixed:
+
+```java
+        <ReactMarkdown>{props.content}</ReactMarkdown>
+```
+
 Update the Post component to handle publishing via the API Route.
 
 This code adds the publishPost function to the React component which is responsible for sending the HTTP PUT request to the API route you just implemented. The render function of the component is also adjusted to check whether the user is authenticated, and if that's the case, it'll display the Publish button in the post detail view as well:
