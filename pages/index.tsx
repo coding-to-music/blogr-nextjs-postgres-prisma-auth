@@ -48,13 +48,22 @@ const Blog: React.FC<Props> = (props) => {
     <Layout>
       <div className="page">
         <h1>Public Feed</h1>
-        <main>
+        {/* {props.feed && props.feed.length > 0 ? (
+          <main>
+            {props.feed.map((post) => (
+              <div key={post.id} className="post">
+                <Post post={post} />
+              </div>
+            ))}
+          </main>
+        ) : null} */}
+        {/* <main>
           {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
           ))}
-        </main>
+        </main> */}
       </div>
       <style jsx>{`
         .post {
