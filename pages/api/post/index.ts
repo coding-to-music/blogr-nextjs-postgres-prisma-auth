@@ -9,7 +9,7 @@ export default async function handle(req, res) {
     const { title, content } = req.body;
 
     // Check for an active session
-    const session = await getSessionHandler(req, res);
+    const session = await getSessionHandler(req);
 
     if (!session) {
       return res.status(401).json({ error: "Unauthorized" });
