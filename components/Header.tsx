@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/react";
+import Profile from "../components/Profile";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -160,6 +161,7 @@ const Header: React.FC = () => {
         <button onClick={() => signOut()}>
           <a>Log out</a>
         </button>
+        <Profile />
         <style jsx>{`
           a {
             text-decoration: none;
