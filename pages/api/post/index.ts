@@ -1,30 +1,33 @@
-// pages/api/post/index.ts
-
-import { getSession } from "next-auth/react";
+import getSessionHandler from "../../../pages/api/auth/session";
 import prisma from "../../../lib/prisma";
 
-// import { useSession } from "next-auth/react";
-
 // POST /api/post
-// Required fields in body: title
+// Required fields in body: title, email
 // Optional fields in body: content
 export default async function handle(req, res) {
-  const { title, content } = req.body;
+  try {
+    const { title, content } = req.body;
 
-  // const { data: session, status } = useSession();
+    // Check for an active session
+    const session = await getSessionHandler(req, res);
 
-  // const { data: session, status } = useSession();
+    if (!session) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
 
-  const session = await getSession({ req });
-  console.log("session", session);
-  // console.log(req);
+    console.log("session", session);
 
-  // const result = await prisma.post.create({
-  //   data: {
-  //     title: title,
-  //     content: content,
-  //     author: { connect: { email: session?.user?.email } },
-  //   },
-  // });
-  // res.json(result);
+    const result = await prisma.post.create({
+      data: {
+        title: title,
+        content: content,
+        author: { connect: { email: session.user.email } },
+      },
+    });
+
+    res.json(result);
+  } catch (error) {
+    console.error("Error creating post:", error);
+    res.status(500).json({ error: "Error creating post" });
+  }
 }
