@@ -1,12 +1,14 @@
-// import { getSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 
-// const getSessionHandler = async (req) => {
-//   const session = await getSession({ req });
+const getSessionHandler = async (req) => {
+  const session = await getSession({ req });
 
-//   return session || null; // Return null if session is falsy
-// };
+  console.log("session", session);
 
-// export default getSessionHandler;
+  return session || null; // Return null if session is falsy
+};
+
+export default getSessionHandler;
 //
 //
 //
