@@ -49,6 +49,83 @@ git remote add origin git@github.com:coding-to-music/blogr-nextjs-postgres-prism
 git push -u origin main
 ```
 
+## Add a favicon.ico
+
+https://isotropic.co/add-a-favicon-to-next-js/
+
+https://realfavicongenerator.net/
+
+### Put the Favicon files into /public
+
+```java
+cd public
+
+wget https://realfavicongenerator.net/files/06fedf85d90178d64bdd26e7430b8eca9b181363/favicon_package_v0.16.zip
+
+unzip favicon_package_v0.16.zip
+
+rm *.zip
+```
+
+### Create the Favicon component
+
+```java
+// /components/Favicon.tsx
+import Head from "next/head";
+
+function Favicon(): JSX.Element {
+  return (
+    <Head>
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      <meta name="msapplication-TileColor" content="#da532c" />
+      <meta name="theme-color" content="#ffffff" />
+    </Head>
+  );
+}
+
+export default Favicon;
+```
+
+### Include the Favicon in
+
+```java
+// /pages/index.tsx
+
+import Layout from "../components/layout";
+import Favicon from "../components/Favicon"; // Import the Favicon component
+
+export default function IndexPage() {
+  return (
+    <Layout>
+      <Favicon />
+      <h1>NextAuth.js Example</h1>
+      <p>
+        This is an example site to demonstrate how to use{" "}
+        <a href="https://next-auth.js.org">NextAuth.js</a> for authentication.
+      </p>
+    </Layout>
+  );
+}
+```
+
 # Fullstack Authentication Example with Next.js and NextAuth.js
 
 This is the starter project for the fullstack tutorial with Next.js and Prisma. You can find the final version of this project in the [`final`](https://github.com/prisma/blogr-nextjs-prisma/tree/final) branch of this repo.

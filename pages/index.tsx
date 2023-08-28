@@ -1,8 +1,11 @@
+// /pages/index.tsx
+
 import React from "react";
 import { GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import prisma from "../lib/prisma";
+import Favicon from "../components/Favicon";
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
@@ -46,6 +49,7 @@ type Props = {
 const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
+      <Favicon />
       <div className="page">
         <h1>Public Feed</h1>
         {/* {props.feed && props.feed.length > 0 ? (
