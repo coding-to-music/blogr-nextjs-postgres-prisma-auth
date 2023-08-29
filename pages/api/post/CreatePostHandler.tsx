@@ -1,10 +1,10 @@
-// /pages/api/post/CreatePost.tsx
+// /pages/api/post/CreatePostHandler.tsx
 
 import { useSession } from "next-auth/react";
 import prisma from "../../../lib/prisma";
 
 // Create a new React component that handles the session and post creation logic
-async function CreatePost({ req, res }) {
+async function CreatePostHandler({ req, res }) {
   const { title, content } = req.body;
   const { data: session } = useSession();
 
@@ -30,4 +30,4 @@ async function CreatePost({ req, res }) {
   }
 }
 
-export default CreatePost;
+export default CreatePostHandler;

@@ -1,8 +1,7 @@
 // /pages/api/post/index.ts
 
-import CreatePost from "./CreatePost";
+import CreatePostHandler from "./CreatePostHandler";
 
 export default function handle(req, res) {
-  // Call the CreatePost component with req and res
-  CreatePost({ req, res });
+  CreatePostHandler({ req, res });
 }
