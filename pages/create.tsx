@@ -31,21 +31,6 @@ const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  // const submitData = async (e: React.SyntheticEvent) => {
-  //   e.preventDefault();
-  //   try {
-  //     const body = { title, content };
-  //     await fetch("/api/post", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(body),
-  //     });
-  //     await Router.push("/drafts");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
@@ -61,12 +46,65 @@ const Draft: React.FC = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
+      // Display a success message
+      toast.success("Post created successfully", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+
       await Router.push("/drafts");
     } catch (error) {
-      console.error("Error creating post:", error);
+      // Display an error message
+      toast.error("Error creating post", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
       // Handle the error gracefully, e.g., show an error message to the user
     }
   };
+
+  // const submitData = async (e: React.SyntheticEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     const body = { title, content };
+  //     await fetch("/api/post", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(body),
+  //     });
+  //     await Router.push("/drafts");
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // const submitData = async (e: React.SyntheticEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     const body = { title, content };
+  //     const response = await fetch("/api/post/CreatePost", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(body),
+  //     });
+
+  //     if (!response.ok) {
+  //       // Handle HTTP errors
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+
+  //     await Router.push("/drafts");
+  //   } catch (error) {
+  //     console.error("Error creating post:", error);
+  //     // Handle the error gracefully, e.g., show an error message to the user
+  //   }
+  // };
 
   return (
     <Layout>
