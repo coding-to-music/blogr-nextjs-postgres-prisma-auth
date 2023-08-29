@@ -3,6 +3,29 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Router from "next/router";
+import { toast } from "react-toastify";
+
+const handleSuccess = () => {
+  // Display a success message
+  toast.success("Post created successfully", {
+    position: "top-right", // You can specify the position
+    autoClose: 3000, // Automatically close after 3 seconds
+    hideProgressBar: false, // Show a progress bar
+    closeOnClick: true, // Close on click
+    pauseOnHover: true, // Pause on hover
+  });
+};
+
+const handleError = () => {
+  // Display an error message
+  toast.error("Error creating post", {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+  });
+};
 
 const Draft: React.FC = () => {
   const [title, setTitle] = useState("");
