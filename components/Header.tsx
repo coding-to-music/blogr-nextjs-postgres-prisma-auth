@@ -1,10 +1,11 @@
 // Header.tsx
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/react";
 import Profile from "../components/Profile";
+import SessionInfoModal from "./SessionInfoModal";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -12,6 +13,15 @@ const Header: React.FC = () => {
     router.pathname === pathname;
 
   const { data: session, status } = useSession();
+  const [isSessionModalOpen, setIsSessionModalOpen] = useState(false); // State to control modal visibility
+
+  const openSessionModal = () => {
+    setIsSessionModalOpen(true);
+  };
+
+  const closeSessionModal = () => {
+    setIsSessionModalOpen(false);
+  };
 
   let left = (
     <div className="left">
