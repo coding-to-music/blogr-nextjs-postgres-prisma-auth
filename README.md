@@ -26,8 +26,7 @@ see `.env-example`
 ```java
 # Used by Prisma:
 #   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-#   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-#   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+#   directUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 
 # Create a Postgres database on Vercel: https://vercel.com/postgres
 POSTGRES_PRISMA_URL=
