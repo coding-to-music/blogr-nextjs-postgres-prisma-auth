@@ -30,7 +30,6 @@ see `.env-example`
 
 # Create a Postgres database on Vercel: https://vercel.com/postgres
 POSTGRES_PRISMA_URL=
-POSTGRES_URL_NON_POOLING=
 
 # Generate one here: https://generate-secret.vercel.app/32 (only required for localhost)
 NEXTAUTH_SECRET=
