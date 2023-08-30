@@ -1,3 +1,5 @@
+// /pages/_app.tsx
+
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/react";

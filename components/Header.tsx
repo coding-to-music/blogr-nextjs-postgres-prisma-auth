@@ -1,11 +1,10 @@
-// Header.tsx
+// /components/Header.tsx
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/react";
 import Profile from "../components/Profile";
-import SessionInfoModal from "./SessionInfoModal";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -13,15 +12,6 @@ const Header: React.FC = () => {
     router.pathname === pathname;
 
   const { data: session, status } = useSession();
-  const [isSessionModalOpen, setIsSessionModalOpen] = useState(false); // State to control modal visibility
-
-  const openSessionModal = () => {
-    setIsSessionModalOpen(true);
-  };
-
-  const closeSessionModal = () => {
-    setIsSessionModalOpen(false);
-  };
 
   let left = (
     <div className="left">
@@ -168,7 +158,6 @@ const Header: React.FC = () => {
             <a>New post</a>
           </button>
         </Link>
-        <button onClick={openSessionModal}>Show Session Info</button>{" "}
         <button onClick={() => signOut()}>
           <a>Log out</a>
         </button>
@@ -212,11 +201,6 @@ const Header: React.FC = () => {
     <nav>
       {left}
       {right}
-      <SessionInfoModal
-        isOpen={isSessionModalOpen}
-        onClose={closeSessionModal}
-        session={session}
-      />
       <style jsx>{`
         nav {
           display: flex;
@@ -229,17 +213,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
-// return (
-//   <nav>
-//     {left}
-//     {right}
-//     <style jsx>{`
-//       nav {
-//         display: flex;
-//         padding: 2rem;
-//         align-items: center;
-//       }
-//     `}</style>
-//   </nav>
-// );
