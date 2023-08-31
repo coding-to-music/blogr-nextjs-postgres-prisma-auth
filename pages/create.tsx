@@ -129,6 +129,9 @@ const Draft: React.FC = () => {
           <a className="back" href="#" onClick={() => Router.push("/")}>
             or Cancel
           </a>
+          <h2>Session</h2>
+          <p>/api/examples/session</p>
+          <iframe src="/api/examples/session" />
         </form>
       </div>
       <style jsx>{`
