@@ -158,6 +158,11 @@ const Header: React.FC = () => {
             <a>New post</a>
           </button>
         </Link>
+        <Link href="/api-example" legacyBehavior>
+          <button>
+            <a>API</a>
+          </button>
+        </Link>
         <button onClick={() => signOut()}>
           <a>Log out</a>
         </button>
