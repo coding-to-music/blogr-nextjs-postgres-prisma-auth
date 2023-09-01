@@ -46,6 +46,7 @@ export default function Header() {
                 />
               )}
               <span className={styles.signedInText}>
+                {/* <strong>{session.user.name}</strong> <small>Signed in as</small> */}
                 <small>Signed in as</small>
                 <br />
                 <strong>{session.user.email ?? session.user.name}</strong>
@@ -56,6 +57,7 @@ export default function Header() {
                 onClick={(e) => {
                   e.preventDefault();
                   signOut();
+                  window.location.href = "/";
                 }}
               >
                 Sign out
