@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
-// import Header from "./Header";
-import HeaderNew from "./HeaderNew";
-import FooterNew from "./FooterNew";
+import Header from "./Header";
 
 type Props = {
   children: ReactNode;
@@ -9,10 +7,8 @@ type Props = {
 
 const Layout: React.FC<Props> = (props) => (
   <div>
-    {/* <Header /> */}
-    <HeaderNew />
+    <Header />
     <div className="layout">{props.children}</div>
-    <FooterNew />
     <style jsx global>{`
       html {
         box-sizing: border-box;
