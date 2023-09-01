@@ -67,20 +67,31 @@ export default function Header() {
         </p>
       </div>
       <nav>
-        <ul className={styles.navItems}>
+        <ul className={styles.navList}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
           </li>
-          <li className={styles.navItem}>
-            <Link href="/drafts">My Drafts</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/create">New Post</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/api-example">API</Link>
-          </li>
-          {/* <li className={styles.navItem}>
+          {session?.user && (
+            <>
+              <li className={styles.navItem}>
+                <Link href="/drafts">My Drafts</Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link href="/create">New Post</Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link href="/api-example">API</Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+{
+  /* <li className={styles.navItem}>
             <Link href="/client">Client</Link>
           </li>
           <li className={styles.navItem}>
@@ -88,15 +99,13 @@ export default function Header() {
           </li>
           <li className={styles.navItem}>
             <Link href="/protected">Protected</Link>
-          </li> */}
-          {/* <li className={styles.navItem}>
+          </li> */
+}
+{
+  /* <li className={styles.navItem}>
             <Link href="/admin">Admin</Link>
           </li>
           <li className={styles.navItem}>
             <Link href="/me">Me</Link>
-          </li> */}
-        </ul>
-      </nav>
-    </header>
-  );
+          </li> */
 }
