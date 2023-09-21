@@ -2,6 +2,12 @@
 
 # 🚀 Users and Posts and Drafts Blogging site built with NextJS Postgres Prisma and NextAuth 🚀
 
+### Status
+
+- Partially Works. Post Drafts does not save, get an error creating Posts.
+- Auth does work, including Session and User and Account.
+- Users and Posts and Drafts Blogging site built with NextJS Postgres Prisma and NextAuth
+
 https://github.com/coding-to-music/blogr-nextjs-postgres-prisma-auth
 
 https://blogr-nextjs-postgres-prisma-auth.vercel.app
